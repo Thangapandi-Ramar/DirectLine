@@ -1,0 +1,37 @@
+.header {
+  height: 75px;
+  margin-top: 20px;
+}
+.header__bottom{
+  border-bottom: 50px solid #2f2f2f;
+}
+
+.header__logo{
+  background: url(/assets/logo_desktop.png);
+  width: 14.625rem;
+  height: 3.375rem;
+  background-size: 14.625rem 3.375rem;
+  float:left;
+}
+
+.header__contact {
+  float: right;
+
+}
+
+.contactIcon{
+  background: url(/assets/telephone.svg) no-repeat;
+  width: 60px;
+  height: 60px;
+  background-size: 3.375rem;
+  float: left;
+}
+
+.contactNumber{
+  float: left;
+}
+
+.contactTelephone{
+  font-size: 1.875rem;
+  font-family: "MuseoSans-Bold";
+}

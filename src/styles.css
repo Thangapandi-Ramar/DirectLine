@@ -1,0 +1,259 @@
+body{
+  padding: 0;
+  margin: 0;
+  font-family: "MuseoSans",sans-serif;
+  font-weight: normal;
+  line-height: 1.5;
+  color: #000;
+  background: #fff;
+}
+
+.container{
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 64rem;
+}
+.float-center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+[type='text'], [type='password'], [type='email'], [type='number'] {
+  box-sizing: border-box;
+  width: 45%;
+  height: 45px;
+  padding: .5rem;
+  border: 2px solid #ccc;
+  color: #000;
+  background-color: #fff;
+  box-shadow: inset 0 0 8px #ebebeb;
+  border-radius: 20px;
+  outline: none;
+  text-align: center;
+  }
+input:focus {
+  background-image: linear-gradient(#B5B2C6, #B5B2C6), linear-gradient(#B5B2C6, #B5B2C6);
+  animation: input 0.5s forwards;
+  box-shadow: none;
+  outline: 0;
+  background-size: 0% 1px;
+}
+.form-group {
+  margin-bottom: 1.25rem;
+}
+.form-group label{
+  width: 35%;
+  text-align: left;
+  margin-right: 3%;
+  padding-top: .4rem;
+  line-height: 1.125rem;
+  height: auto!important;
+  margin-bottom: 0;
+  display: inline-block;
+}
+
+.greenBtn{
+  width: 13.875rem;
+  margin-left: 0;
+  margin-top: 0;
+  height: 3.125rem;
+  font-size: 1.375rem;
+  line-height: 3.125rem;
+  border-radius: 40px;
+  background: #b6d323;
+  border: 0;
+  cursor: pointer;
+}
+.floatLt{
+  float: left;
+}
+
+.formError{
+  color:red;
+  left: 39%;
+  position: relative;
+  width: 100%;
+}
+
+.large-5 {
+   width: 41.6666666667%;
+}
+
+.progress__bar {
+  margin-top: 2.6875rem;
+  width: 32.625rem;
+  height: 2.5rem;
+  margin-left: auto;
+  margin-right: auto;
+  position: relative;
+}
+.progress__bar:before {
+  position: absolute;
+  border: solid #ccc;
+  content: '';
+  z-index: -1;
+  border-width: .1875rem 0 0 0;
+  top: 50%;
+  left: 0;
+  width: 100%;
+}
+.progress__bar--circle {
+  display: inline-block;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 2.5rem;
+  border: 3px solid #ccc;
+  color: #ccc;
+  text-align: center;
+  line-height: 2.1875rem;
+  font-size: 1.5rem;
+  background: #fff;
+}
+
+.progress__bar--circle:after {
+  text-indent: 0;
+  font-size: 1.125rem;
+  width: 12.5rem;
+  display: block;
+  text-align: center;
+  margin-left: -4.625rem;
+  color: #ccc;
+  margin-top: 2.5rem;
+}
+.step1:after{content: 'Your Business'}
+.step2:after{content: 'Your Quote'}
+.step3:after{content: 'Payment'}
+
+.step2, .step3{
+  margin-left: 12rem;
+}
+
+span.active{
+  color: #000;
+  border: 3px solid #000;
+}
+
+span.active:after{
+  color: #000;
+}
+
+.accordion{
+  margin-top: 3rem;
+  width: 85%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.accordion__header{
+  font-family: "MuseoSans-Boldest";
+  font-size: 1rem;
+  color: #fff;
+  background: #b6d323;
+  border-radius: .3125rem;
+  width: 100%;
+  height: 2.8125rem;
+  display: block;
+  line-height: 2.8125rem;
+  padding: 0;
+  text-indent: 1.4375rem;
+
+}
+.accordion__item .accordion__header{
+  cursor: pointer;
+}
+.accordion-title-disabled .accordion__header{
+  cursor: not-allowed;
+}
+.is-active .accordion__header{
+  background: #000;
+}
+
+.accordion__content{
+  padding: 2.5rem 1.5rem 2.5rem 0.5rem;
+}
+
+.accordion__content input[type="text"], .accordion__content select {
+  margin-top: 0;
+  display: inline-block;
+}
+input[type="text"]:focus,select:focus {
+  border: .125rem solid #b6d323;
+  outline: 0;
+  -webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6);
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(102,175,233,.6)
+}
+
+.label--bg{
+  background: #e9e9e9;
+  padding: 5px;
+  color: #000;
+  margin-bottom: 1rem;
+  font-size: 1.25rem;
+  width: 100%;
+}
+select {
+  height: 3.1875rem;
+  border: .125rem solid #ccc;
+  position: relative;
+  padding-left: 1.5625rem;
+  box-shadow: inset 0 0 8px #ebebeb;
+  background-image: url(/assets/select@2x.png);
+  background-size: 1.375rem .875rem;
+   margin: 0 auto;
+  background-repeat: no-repeat;
+  background-position: 96%;
+  line-height: normal;
+  color: #000;
+  background-color: #fff;
+  border-radius: 1000px;
+  -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 45%;
+}
+option {
+  font-weight: normal;
+  display: block;
+  white-space: pre;
+  min-height: 1.2em;
+  padding: 0px 2px 1px;
+}
+
+.accordion-title-disabled {
+  opacity: .5;
+  cursor: not-allowed;
+  border-radius: .3125rem;
+  font-family: "MuseoSans-Boldest";
+}
+
+.accordion-title-disabled .accordion__content{
+  display: none;
+}
+
+.accordion__item{
+  margin-bottom: .625rem;
+}
+
+.btn--right{
+  float: right;
+}
+
+.clear
+{
+  clear: both;
+}
+
+.error-field .ng-touched, .error-field .ng-touched{
+  border: 2px solid red;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}

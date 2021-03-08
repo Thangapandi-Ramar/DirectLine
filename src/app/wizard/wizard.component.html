@@ -1,0 +1,61 @@
+<div class="row">
+  <form [formGroup]="wizardForm">
+    <div class="wizardQuestions">
+      <div class="form-group questionSection connector">
+          <label for="tradeSearch" class="float-center tradeSearch">What do you do?</label>
+          <input type="text" formControlName="tradeSearch" (keyup)="toggleDropDown()" class="float-center" id="tradeSearch" placeholder="Start typing your business activity...">
+          <div class="tradeDropDown" *ngIf="showTradeDropDown">
+            <div (click)= "selectTrade(trade)" *ngFor = "let trade of trades | wizardFilter:getEnteredString()">
+              <div class="tradeName">{{trade}}</div>
+            </div>
+          </div>
+      </div>
+      <div class="formError" *ngIf="!formControl.tradeSearch.valid && formControl.tradeSearch.touched">Please enter your business activity</div>
+     <div class="form-group questionSection connector" *ngIf="isTradeSelected">
+        <label class="float-center multi-line ">Where do you run your business from?</label>
+        <div class="options">
+          <div  *ngFor="let item of businessFromArray; let i = index; let eve = even;" class = "{{item}}">
+            <div class="options_row" *ngIf="eve">
+              <div class="option {{item}} ">
+                <label>
+                  <input type="checkbox" formControlName="{{businessFromArray[i].name}}" (change)="onBusinessFromChange(businessFromArray[i].name, $event.target.checked)">
+                  <span>{{businessFromArray[i].value}}</span>
+                </label>
+              </div>
+              <div class="option">
+                <label>
+                  <input type="checkbox" formControlName="{{businessFromArray[i+1].name}}" (change)="onBusinessFromChange(businessFromArray[i+1].name, $event.target.checked)">
+                  <span>{{businessFromArray[i+1].value}}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <button class="greenBtn btn_left" *ngIf="isBusinessfromSelected" (click)="onClickBusinessFromNext()">Next</button>
+        </div>
+      </div>
+      <div class="form-group questionSection connector" *ngIf="isBusinessFromNextClicked">
+        <label class="float-center multi-line">Which of these covers do you need to add to your quote?</label>
+        <div class="options">
+          <div  *ngFor="let item of coverArray; let i = index; let eve = even;" class = "{{item}}">
+            <div class="options_row" *ngIf="eve">
+              <div class="option {{item}} ">
+                <label>
+                  <input type="checkbox" formControlName="{{coverArray[i].name}}" (change)="onCoverChange(coverArray[i].name, $event.target.checked)">
+                  <span>{{coverArray[i].value}}</span>
+                </label>
+              </div>
+              <div class="option">
+                <label>
+                  <input type="checkbox" formControlName="{{coverArray[i+1].name}}" (change)="onCoverChange(coverArray[i+1].name, $event.target.checked)">
+                  <span>{{coverArray[i+1].value}}</span>
+                </label>
+              </div>
+            </div>
+          </div>
+          <button class="greenBtn btn_left" routerLink="/generalInfo" *ngIf="isCoverSelected">Continue</button>
+        </div>
+      </div>
+    </div>
+  </form>
+
+</div>
