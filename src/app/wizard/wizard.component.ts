@@ -18,7 +18,6 @@ export class WizardComponent {
   bfCheckedItemsArray = [];
   coverCheckedItemsArray = [];
   businessFromArray = [
-<<<<<<< HEAD
     {name: 'fromSalon', value: 'From my own salon',isSelected:false},
     {name: 'fromHome', value: 'From home',isSelected:false},
     {name: 'rentChair', value: 'Rent a chair from salon',isSelected:false},
@@ -31,20 +30,6 @@ export class WizardComponent {
     {name: 'professionalIndemnity', value: 'Professional Indemnity',isSelected:false},
     {name: 'legalExpenses', value: 'Legal Expenses',isSelected:false},
     {name: 'cyber', value: 'Cyber',isSelected:false}
-=======
-    {name: 'fromSalon', value: 'From my own salon'},
-    {name: 'fromHome', value: 'From home'},
-    {name: 'rentChair', value: 'Rent a chair from salon'},
-    {name: 'mobileBusiness', value: 'Mobile Business'}
-    ];
-  coverArray = [
-    {name: 'publicLiability', value: 'Public Liability'},
-    {name: 'yourProperty', value: 'Your Property'},
-    {name: 'businessInterruption', value: 'Business Interruption'},
-    {name: 'professionalIndemnity', value: 'Professional Indemnity'},
-    {name: 'legalExpenses', value: 'Legal Expenses'},
-    {name: 'cyber', value: 'Cyber'}
->>>>>>> b570134f5048213a3e366e74a6a0bd051ee136f1
   ];
   constructor(private wizardService: WizardService, private formBuilder: FormBuilder) {
     this.wizardForm = formBuilder.group({
@@ -83,13 +68,10 @@ export class WizardComponent {
     this.showTradeDropDown = false;
     this.isTradeSelected = true;
     this.isBusinessFromNextClicked = false;
-<<<<<<< HEAD
     this.isBusinessfromSelected = false;
     this.uncheckAll(this.businessFromArray);
     this.uncheckAll(this.coverArray);
     this.isCoverSelected = false;
-=======
->>>>>>> b570134f5048213a3e366e74a6a0bd051ee136f1
   }
 
   onBusinessFromChange(name: string, isChecked) {
@@ -102,11 +84,8 @@ export class WizardComponent {
         this.isBusinessfromSelected = true;
       }else {
         this.isBusinessfromSelected = false;
-<<<<<<< HEAD
         this.isBusinessFromNextClicked = false;
         this.uncheckAll(this.coverArray);
-=======
->>>>>>> b570134f5048213a3e366e74a6a0bd051ee136f1
       }
 
   }
@@ -128,13 +107,10 @@ export class WizardComponent {
     }
 
   }
-<<<<<<< HEAD
 
   uncheckAll(checkBoxList) {
     for (var i = 0; i < checkBoxList.length; i++) {
       checkBoxList[i].isSelected = false;
     }
   }
-=======
->>>>>>> b570134f5048213a3e366e74a6a0bd051ee136f1
 }
