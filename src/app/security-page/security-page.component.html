@@ -1,0 +1,18 @@
+<div class="row">
+  <div class="securityTxt">
+    <div> Security check</div>
+    <div class="txtUnderline">Enter your Security key to create a quote</div>
+  </div>
+  <form [formGroup]="securityForm">
+    <div class="form-group" [ngClass]="{'error-field': securityKey.errors &&
+    (!securityKey.valid || securityKey.touched) }">
+      <label for="securityKey">Security key</label>
+      <input type="password" id="securityKey" formControlName="securityKey" >
+      <div class="formError" *ngIf="!securityKey.valid && securityKey.touched">
+        <div *ngIf="securityKey.errors.required">Security key is Required</div>
+        <div *ngIf="securityKey.errors.pattern">Please enter valid Security key.</div>
+    </div>
+    </div>
+      <button name="proceedBtn" class="greenBtn" routerLink="/wizard" [disabled]="!securityForm.valid">Proceed</button>
+  </form>
+</div>

@@ -1,0 +1,143 @@
+<div class="row">
+  <div class="progress__bar">
+    <span class="progress__bar--circle step1 active"></span>
+    <span class="progress__bar--circle step2"></span>
+    <span class="progress__bar--circle step3"></span>
+  </div>
+  <form [formGroup]="giForm">
+    <div class="accordion">
+      <div id="generalInformation" class="accordion__item" [ngClass]="{'is-active': !isGiNextClicked}">
+        <div class="accordion__header"  (click)="onDivClick()">General Information</div>
+        <div class="accordion__content" *ngIf="!isGiNextClicked">
+          <div class="form-group" [ngClass]="{'error-field' : companyName.errors && 
+          (!companyName.valid || companyName.touched)}" >
+            <label for="companyName">What's your business name?</label>
+            <input type="text" id="companyName" formControlName="companyName" >
+            <div class="formError" *ngIf="!companyName.valid && companyName.touched">
+              <div *ngIf="companyName.errors.required">Company Name is Required</div>
+            </div>
+          </div>
+          <div>Please tell us the name of the policy holder:</div>
+          <div class="form-group" [ngClass]="{'error-field' : title.errors && 
+          (!title.valid || title.touched)}" >
+            <label for="title">Title</label>
+            <select id="title" formControlName="title">
+              <option *ngFor="let t of titleArray" [value]="t">
+                {{t}}
+              </option>
+            </select>
+            <div class="formError" *ngIf="!title.valid && title.touched">
+              <div *ngIf="title.errors.required">Title is Required</div>
+            </div>
+          </div>
+          <div class="form-group" [ngClass]="{'error-field' : firstName.errors && 
+          (!firstName.valid || firstName.touched)}">
+            <label for="firstName">First name</label>
+            <input id="firstName" type="text" formControlName="firstName" >
+            <div class="formError" *ngIf="!firstName.valid && firstName.touched">
+              <div *ngIf="firstName.errors.required">First name is Required</div>
+            </div>
+          </div>
+          <div class="form-group" [ngClass]="{'error-field' : lastName.errors && 
+          (!lastName.valid || lastName.touched)}">
+            <label for="lastName">Last name</label>
+            <input id="lastName" type="text" formControlName="lastName" >
+            <div class="formError" *ngIf="!lastName.valid && lastName.touched">
+              <div *ngIf="lastName.errors.required">Last name is Required</div>
+            </div>
+          </div>
+          <div class="label--bg">Your contact details:</div>
+          <div class="form-group" [ngClass]="{'error-field' : email.errors && 
+          (!email.valid || email.touched)}">
+            <label for="email">Contact email address:</label>
+            <input id="email" type="email" formControlName="email" >
+            <div class="formError" *ngIf="!email.valid && email.touched">
+              <div *ngIf="email.errors.required">Contact email address is Required</div>
+              <div *ngIf="email.errors.email">Email is invalid</div>
+            </div>
+          </div>
+          <div class="form-group" [ngClass]="{'error-field' : confirmEmail.errors &&
+          (!confirmEmail.valid || confirmEmail.touched)}">
+            <label for="confirmEmail">Confirm email address:</label>
+            <input id="confirmEmail" type="email" formControlName="confirmEmail" >
+            <div class="formError" *ngIf="confirmEmail.errors &&
+            !confirmEmail.valid && confirmEmail.touched">
+              <div *ngIf="confirmEmail.errors.required">Contact email address is Required</div>
+              <div *ngIf="confirmEmail.errors.email">Email is invalid</div>
+              <div *ngIf="confirmEmail.errors.emailValidity">Email & Confirm email doesn't match</div>
+            </div>
+          </div>
+          <div>Please provide at least one contact number</div>
+          <div class="form-group" [ngClass]="{'error-field' : mobile.errors && 
+          (!mobile.valid || mobile.touched)}">
+            <label for="mobile">Mobile</label>
+            <input id="mobile" type="number" formControlName="mobile" >
+            <div class="formError" *ngIf="mobile.errors && !mobile.valid && mobile.touched">
+              <div *ngIf="mobile.errors.required">Mobile Number is Required</div>
+              <div *ngIf="mobile.errors.minLength">The minimum length is 11.</div>
+            </div>
+          </div>
+          <div class="form-group" [ngClass]="{'error-field' : landLine.errors && 
+          (!landLine.valid || landLine.touched)}">
+            <label for="landLine">LandLine</label>
+            <input id="landLine" type="number" formControlName="landLine" >
+            <div class="formError" *ngIf="landLine.errors && !landLine.valid && landLine.touched">
+              <div *ngIf="landLine.errors.required">LandLine Number is Required</div>
+              <div *ngIf="landLine.errors.minlength">The minimum length is 11.</div>
+            </div>
+          </div>
+          <div class="form-group" [ngClass]="{'error-field' : companyName.errors && 
+          (!companyName.valid && companyName.touched)}">
+            <button type="submit" class="greenBtn btn--right" (click)="onSubmit()" [disabled]="!giForm.valid">Next</button>
+            <div class="clear"></div>
+          </div>
+        </div>
+      </div>
+      <div id="people" class="accordion__item" [ngClass]="{'is-active': isGiNextClicked, 'accordion-title-disabled': !isGiNextClicked}">
+        <div class="accordion__header">People</div>
+        <div class="accordion__content" *ngIf="formValues != null">
+          <div class="form-group">
+            <label>Business name</label>
+            <input type="text" readonly value="{{formValues.companyName}}">
+          </div>
+          <div class="form-group">
+            <label>Title</label>
+            <input type="text" readonly value="{{formValues.title}}">
+          </div>
+          <div class="form-group">
+            <label>First name</label>
+            <input type="text" readonly value="{{formValues.firstName}}">
+          </div>
+          <div class="form-group">
+            <label>Last name</label>
+            <input type="text" readonly value="{{formValues.lastName}}">
+          </div>
+          <div class="form-group">
+            <label>Contact email address</label>
+            <input type="text" readonly value="{{formValues.email}}">
+          </div>
+          <div class="form-group">
+            <label>Confirm email address:</label>
+            <input type="text" readonly value="{{formValues.confirmEmail}}">
+          </div>
+          <div class="form-group">
+            <label>Mobile</label>
+            <input type="text" readonly value="{{formValues.mobile}}">
+          </div>
+          <div class="form-group">
+            <label>LandLine</label>
+            <input type="text" readonly value="{{formValues.landLine}}">
+          </div>
+        </div>
+      </div>
+      <div id="publicLiability" class="accordion__item accordion-title-disabled">
+        <div class="accordion__header">Public Liability</div>
+        <div class="accordion__content"></div>
+      </div>
+      <div id="businessInterruption" class="accordion__item accordion-title-disabled">
+        <div class="accordion__header">Business Interruption</div>
+        <div class="accordion__content"></div>
+      </div>
+    </div>
+  </form>
+</div>

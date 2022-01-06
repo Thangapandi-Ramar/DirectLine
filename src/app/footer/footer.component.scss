@@ -1,0 +1,45 @@
+.footerLinks a {
+    font-size: .75rem;
+    color: #d91f26;
+    margin-right: 3px;
+}
+
+.footerTxt {
+    margin-top: 20px;
+    float: left;
+    border-top: 0.5px solid lightgrey;
+    p {
+        font-size: .75rem;
+        line-height: 1.1875rem;
+        font-family: "MuseoSans";
+        width: 75%;
+        float: left;
+    }
+    img {
+        margin-top: .625rem;
+        width: 10.375rem;
+        float: right;
+    }
+}
+
+@media (max-width: 767px) {
+    .footerTxt {
+        img {
+            margin-top: 1.625rem;
+            width: 6rem;
+        }
+        p {
+            font-size: 7px;
+            line-height: 1.1rem;
+            width: 70%;
+        }
+    }
+}
+
+@media (max-width: 320px) {
+    .footerTxt {
+        p {
+            width: 60%;
+        }
+    }
+}
