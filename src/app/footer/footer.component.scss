@@ -1,4 +1,5 @@
 .footerLinks a {
+<<<<<<< HEAD
     font-size: .75rem;
     color: #d91f26;
     margin-right: 3px;
@@ -43,3 +44,27 @@
         }
     }
 }
+=======
+  font-size: .75rem;
+  color: #d91f26;
+  margin-right: 3px;
+}
+.footerTxt{
+  margin-top: 20px;
+  float: left;
+  border-top: 0.5px solid lightgrey;
+  p{
+    font-size: .75rem;
+    line-height: 1.1875rem;
+    font-family: "MuseoSans";
+    width: 75%;
+    float: left;
+  }
+
+  img {
+    margin-top: .625rem;
+    width: 10.375rem;
+    float: right;
+  }
+}
+>>>>>>> b570134f5048213a3e366e74a6a0bd051ee136f1

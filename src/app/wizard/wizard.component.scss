@@ -1,3 +1,4 @@
+<<<<<<< HEAD
     label,
     input {
         border-radius: 1000px;
@@ -170,3 +171,140 @@
             }
         }
     }
+=======
+label, input {
+  border-radius: 1000px;
+  border: .125rem solid #ccc;
+  height: 3.125rem;
+  vertical-align: middle;
+  text-align: center;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+label {
+  display: block;
+  padding-top: .3125rem;
+  font-family: "MuseoSans-Boldest";
+  background: #f3f3f3;
+  font-size: 1.25rem;
+  margin-bottom: 1.875rem;
+  line-height: 1.8;
+  color: #000;
+}
+
+.connector:before {
+  position: absolute;
+  border: solid #ccc;
+  content: '';
+  z-index: -1;
+  border-width: 0 0 0 .125rem;
+  top: 0;
+  left: 50%;
+  height: 100%;
+}
+
+.questionSection{
+  margin-top: 50px;
+  position: relative;
+  width: 100%;
+  float: left;
+}
+
+.tradeDropDown {
+  border: 1px solid lightgrey;
+  background: #fff;
+  margin-left: auto;
+  margin-right: auto;
+  width: 28rem;
+  max-height: 200px;
+  overflow: auto;
+  .tradeName:hover
+  {
+    background: greenyellow;
+  }
+}
+
+.option {
+  label {
+    width: auto !important;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  input {
+    display: none;
+  }
+  input[type='checkbox']:checked+span {
+    background: #b6d323;
+    border: 1px solid #b6d323!important;
+  }
+}
+  .options_row {
+    height: 3.125rem;
+    margin-bottom: 1.875rem;
+    position: relative;
+    clear: both;
+    .option:nth-child(odd) {
+      float: left;
+    }
+    .option:nth-child(even){
+      float: right;
+    }
+    &:before {
+      position: absolute;
+      border: solid #ccc;
+      content: '';
+      z-index: -1;
+      width: 80%;
+      top: 50%;
+    }
+    &:last-of-type:after{
+      display: block;
+      content: "";
+      width: .625rem;
+      height: 1.0625rem;
+      left: 48%;
+      bottom: 0rem;
+      background: #f3f3f3;
+      position: absolute;
+    }
+    &:last-of-type label{
+      margin-bottom: 0;
+    }
+
+  }
+
+  .options{
+    margin: 0 auto;
+    width: 45%;
+    position: relative;
+  }
+
+  .option span{
+    height: 3.125rem;
+    width: 11rem;
+    font-size: 1rem;
+    line-height: 1.125rem;
+    padding-left: 1.1rem;
+    padding-right: 1.1rem;
+    text-align: center;
+    display: table-cell;
+    vertical-align: middle;
+    border-radius: 1000px;
+  }
+
+  .btn_left{
+    position: relative;
+    left: 25%;
+  }
+
+.multi-line {
+  min-height: 45px;
+  height: auto!important;
+  border-radius: 1.25rem;
+  padding: 8px 1.75rem .4375rem;
+  line-height: 1.2em;
+}
+>>>>>>> b570134f5048213a3e366e74a6a0bd051ee136f1
